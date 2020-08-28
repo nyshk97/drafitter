@@ -1,5 +1,6 @@
 class TestsController < ApplicationController
   def index
+    Time.now
     @tests = Test.all
   end
 
