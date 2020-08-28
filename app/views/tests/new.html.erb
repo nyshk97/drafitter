@@ -1,0 +1,9 @@
+<% provide(:title, "New") %>
+<h1>Tests#new</h1>
+<%= form_with model: @test, local: true do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+<div><%= f.label :name %></div>
+<div><%= f.text_field :name, 'data-testid': 'name' %></div>
+<div><%= f.submit 'data-testid': 'submit' %></div>
+<% end %>
+<%= link_to '戻る', tests_path %>
