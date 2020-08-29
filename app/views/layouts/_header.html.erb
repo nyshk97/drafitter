@@ -1,15 +1,13 @@
-<header class="px-2 py-4 relative bg-blue-500">
+<header class="px-2 py-1 relative bg-gray-800">
   <div class="flex justify-between items-center container mx-auto">
-    <div style='width: 200px;' class="hover:opacity-50 cursor-pointer">
-      <%= link_to(root_url) do %>
-      <img src="http://placehold.jp/16/eee/999/250x40.png?text=LOGO" alt="">
+    <div class="hover:opacity-50 cursor-pointer">
+      <%= link_to(root_url, class: 'text-3xl text-blue-300') do %>
+      Drafitter
       <% end %>
     </div>
     <div class="hidden md:block">
-      <a src='#' class="px-3 hover:text-pink-700 cursor-pointer">メニュー1</a>
-      <a src='#' class="px-3 hover:text-pink-700 cursor-pointer">メニュー2</a>
-      <a src='#' class="px-3 hover:text-pink-700 cursor-pointer">メニュー3</a>
-      <a src='#' class="px-3 hover:text-pink-700 cursor-pointer">メニュー4</a>
+      <a src='#' class="px-3 text-gray-400 cursor-pointer">GitHub</a>
+      <a src='#' class="px-3 text-gray-400 cursor-pointer">@d0ne1s</a>
     </div>
   </div>
 
@@ -20,24 +18,13 @@
         <span class="drawer__icon -parts"></span>
       </label>
       <label class="drawer__overlay" for="drawerCheckbox"></label>
-      <nav class="drawer__menu pb-2">
-        <div class="py-3 px-3" style='width: 200px;'>
-          <a src='#'>
-            <img src="http://placehold.jp/16/ddd/999/300x80.png?text=ダミー画像" alt="">
-          </a>
-        </div>
+      <nav class="drawer__menu">
         <ul>
           <li class="border-b px-4 py-3 cursor-pointer">
-            <a src='#'>メニュー1</a>
+            <a src='#'>GitHub</a>
           </li>
           <li class="border-b px-4 py-3 cursor-pointer">
-            <a src='#'>メニュー2</a>
-          </li>
-          <li class="border-b px-4 py-3 cursor-pointer">
-            <a src='#'>メニュー3</a>
-          </li>
-          <li class="border-b px-4 py-3 cursor-pointer">
-            <a src='#'>メニュー4</a>
+            <a src='#'>d0ne1s</a>
           </li>
         </ul>
       </nav>

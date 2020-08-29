@@ -1,39 +1,41 @@
 <% provide(:title, "ドラフト一覧") %>
-<%= form_with model: @draft, local: true do |f| %>
-<%= render 'shared/error_messages', object: f.object %>
-<div class="border transition-all duration-500 relative rounded p-1 mt-4">
-  <div class="-mt-4 absolute tracking-wider px-1 text-xs">
+<div class='mt-8 mb-4'>
+  <%= form_with model: @draft do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="border transition-all duration-500 relative rounded p-1">
+    <div class="-mt-4 absolute tracking-wider px-1 text-xs">
+      <p>
+        <%= f.label :content, class: 'bg-white text-gray-600 px-1' %>
+      </p>
+    </div>
     <p>
-      <%= f.label :content, class: 'bg-white text-gray-600 px-1' %>
+      <%= f.text_area :content, class: 'py-1 px-1 text-gray-900 outline-none block h-full w-full' %>
     </p>
   </div>
-  <p>
-    <%= f.text_area :content, class: 'py-1 px-1 text-gray-900 outline-none block h-full w-full' %>
-  </p>
-</div>
-<div class="border transition-all duration-500 relative rounded p-1 mt-4">
-  <div class="-mt-4 absolute tracking-wider px-1 text-xs">
+  <div class="border transition-all duration-500 relative rounded p-1 mt-4">
+    <div class="-mt-4 absolute tracking-wider px-1 text-xs">
+      <p>
+        <%= f.label :url, class: 'bg-white text-gray-600 px-1' %>
+      </p>
+    </div>
     <p>
-      <%= f.label :url, class: 'bg-white text-gray-600 px-1' %>
+      <%= f.text_field :url, class: 'py-1 px-1 text-gray-900 outline-none block h-full w-full' %>
     </p>
   </div>
-  <p>
-    <%= f.text_field :url, class: 'py-1 px-1 text-gray-900 outline-none block h-full w-full' %>
-  </p>
+  <div class="mt-3 text-center">
+    <%= f.submit '追加', class: 'w-1/2 text-sm rounded-full text-gray-100 py-2 bg-blue-600 cursor-pointer hover:shadow-inner hover:bg-blue-700 transition-all duration-300' %>
+  </div>
+  <% end %>
 </div>
-<div class="mt-3">
-  <%= f.submit '追加', class: 'text-sm rounded-full text-gray-100 px-4 py-2 bg-blue-500 cursor-pointer hover:shadow-inner hover:bg-blue-700 transition-all duration-300' %>
+<div class='py-3'>
+  <% @drafts.each do |draft| %>
+  <div class='p-2 border border-gray-300 rounded mb-3'>
+    <p class='mb-2'><%= draft.content %></p>
+    <p><%= draft.url %></p>
+    <p class='text-right'>
+      <%= link_to '編集', edit_draft_path(draft) %>
+      残り<%= draft.remaining_time %>
+    </p>
+  </div>
+  <% end %>
 </div>
-<% end %>
-
-<% @drafts.each do |draft| %>
-<div>
-  <p>本文</p>
-  <p><%= draft.content %></p>
-</div>
-<div>
-  <p>URL</p>
-  <p><%= draft.url %></p>
-</div>
-<%= link_to '編集', edit_draft_path(draft) %>
-<% end %>
