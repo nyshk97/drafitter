@@ -30,11 +30,13 @@
 <div class='py-3'>
   <% @drafts.each do |draft| %>
   <div class='p-2 border border-gray-300 rounded mb-3'>
-    <p class='mb-2'><%= draft.content %></p>
+    <p class='mb-2'><%= simple_format(h(draft.content)) %></p>
     <p><%= draft.url %></p>
     <p class='text-right'>
       <%= link_to '編集', edit_draft_path(draft) %>
-      残り<%= draft.remaining_time %>
+      <span class='text-sm'>
+        残り<%= draft.remaining_time %>
+      </span>
     </p>
   </div>
   <% end %>
