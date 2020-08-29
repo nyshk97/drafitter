@@ -1,4 +1,5 @@
 class DraftsController < ApplicationController
+  before_action :find_draft, only: %i[edit update]
   def index
     @draft = Draft.new
     @drafts = Draft.all
@@ -18,7 +19,13 @@ class DraftsController < ApplicationController
 
   def edit; end
 
-  def update; end
+  def update
+    if @draft.update(draft_params)
+      redirect_to drafts_url, notice: 'ドラフトを編集しました'
+    else
+      render :edit
+    end
+  end
 
   private
 
