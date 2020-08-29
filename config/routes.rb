@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'tests#index'
+  root to: 'drafts#index'
   resources :tests, only: %i[index new create edit update destroy]
   resources :drafts, only: %i[index new create edit update]
   # resources :tasks, only: %i[new create edit update]

@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    models:
+      draft: ドラフト
+    attributes:
+        draft:
+          content: 本文 
+          url: URL 
