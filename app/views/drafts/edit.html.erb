@@ -1,16 +1,7 @@
 <% provide(:title, "ドラフト一覧") %>
-<%= form_with model: @draft do |f| %>
+<%= form_with model: @draft, class: 'mt-4' do |f| %>
 <%= render 'shared/error_messages', object: f.object %>
-<div class="border transition-all duration-500 relative rounded p-1 mt-4">
-  <div class="-mt-4 absolute tracking-wider px-1 text-xs">
-    <p>
-      <%= f.label :content, class: 'bg-white text-gray-600 px-1' %>
-    </p>
-  </div>
-  <p>
-    <%= f.text_area :content, class: 'py-1 px-1 text-gray-900 outline-none block h-full w-full' %>
-  </p>
-</div>
+<%= render 'content_input', f: f %>
 <div class="border transition-all duration-500 relative rounded p-1 mt-4">
   <div class="-mt-4 absolute tracking-wider px-1 text-xs">
     <p>
