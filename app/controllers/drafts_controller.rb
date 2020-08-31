@@ -9,11 +9,13 @@ class DraftsController < ApplicationController
 
   def create
     @draft = Draft.new(draft_params)
-    if @draft.save
-      redirect_to drafts_url, notice: 'ドラフトを追加しました'
-    else
-      @drafts = Draft.all
-      render :index
+    respond_to do |format|
+      if @draft.save
+        format.js { redirect_to drafts_url, notice: 'ドラフトを追加しました' }
+      else
+        @object = @draft
+        format.js { render 'shared/err_msg', status: :unprocessable_entity }
+      end
     end
   end
 
