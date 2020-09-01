@@ -43,6 +43,7 @@ group :development do
   gem 'brakeman'
   gem 'bullet'
   gem 'listen', '~> 3.2'
+  gem 'newrelic_rpm'
   gem 'overcommit'
   gem 'pry-rails'
   gem 'rspec-rails'
