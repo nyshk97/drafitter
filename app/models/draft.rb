@@ -1,5 +1,6 @@
 class Draft < ApplicationRecord
   validates :content, length: { maximum: 140 }, presence: true
+  scope :active, -> { where('created_at >= ?', Time.current.ago(3.days)) }
 
   LIFE_SPAN_DAY = 3
 

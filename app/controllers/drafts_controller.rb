@@ -2,7 +2,7 @@ class DraftsController < ApplicationController
   before_action :find_draft, only: %i[edit update]
   def index
     @draft = Draft.new
-    @drafts = Draft.all.order(created_at: :desc)
+    @drafts = Draft.active.order(created_at: :desc)
   end
 
   def new; end
