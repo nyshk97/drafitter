@@ -16,8 +16,7 @@ ActiveRecord::Schema.define(version: 2020_08_28_105705) do
   enable_extension "plpgsql"
 
   create_table "drafts", force: :cascade do |t|
-    t.string "content", limit: 140, null: false
-    t.string "url"
+    t.string "content", limit: 400, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
