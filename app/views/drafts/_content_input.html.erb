@@ -1,20 +1,16 @@
-<div class="border transition-all duration-500 relative rounded p-1">
+<div id='tweetWrap' class="border relative rounded p-1">
   <div class="-mt-4 absolute tracking-wider px-1 text-xs">
     <p>
       <%= f.label :content, class: 'bg-white text-gray-600 px-1' %>
     </p>
   </div>
   <p>
-    <%= f.text_area :content, id: 'js-count', maxlength: 140, class: 'py-1 px-1 text-gray-900 outline-none block w-full resize-none text-sm h-24' %>
-  <p class='text-right text-xs text-gray-700'><span class='show-count'></span>/140</p>
+    <%= f.text_area :content, id: 'tweetInput', maxlength: 140, class: 'py-1 px-1 text-gray-900 outline-none block w-full resize-none text-sm h-24' %>
+  <p class='text-right text-xs text-gray-700'><span class='show-remain'></span>/140</p>
   </p>
 </div>
-
-<script>
-  $(function () {
-    $('#js-count').keyup(function () {
-      var count = $(this).val().length;
-      $('.show-count').text(count);
-    });
-  });
-</script>
+<style>
+  .err {
+    border: solid 2px #f44;
+  }
+</style>
