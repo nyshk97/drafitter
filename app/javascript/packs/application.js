@@ -12,6 +12,21 @@ require('jquery')
 
 import '../css/tailwind.css';
 
+import twttr from "twitter-text";
+
+$(function () {
+  $('#tweetInput').keyup(function () {
+    const twinput = $(this).val();
+    const tweet = twttr.parseTweet(twinput);
+    $('.show-remain').text(tweet.weightedLength / 2);
+    if (tweet.valid) {
+      $('#tweetWrap').removeClass("err");
+    } else {
+      $('#tweetWrap').addClass("err");
+    }
+  });
+});
+
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
