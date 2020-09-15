@@ -10,7 +10,7 @@ class Draft < ApplicationRecord
     if remaining_hour.zero?
       "#{(remaining_secound / 60)}分"
     else
-      "#{remaining_hour}時間"
+      "#{remaining_hour}<span class='text-xs'>時間</span>"
     end
   end
 end
