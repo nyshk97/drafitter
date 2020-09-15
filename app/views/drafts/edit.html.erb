@@ -3,6 +3,6 @@
 <%= render 'content_input', f: f %>
 <%= render 'shared/err_msg' %>
 <div class="mt-3 text-center">
-  <%= f.submit '更新', class: 'w-1/2 text-sm rounded-full text-gray-100 py-2 bg-blue-500 cursor-pointer hover:shadow-inner hover:bg-blue-700 transition-all duration-300' %>
+  <%= f.submit '更新', id: 'tweetSubmit', class: 'w-1/2 text-sm rounded-full text-gray-100 py-2 bg-blue-500 cursor-pointer hover:shadow-inner hover:bg-blue-700 transition-all duration-300' %>
 </div>
 <% end %>

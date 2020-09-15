@@ -21,8 +21,10 @@ $(function () {
     $('.show-remain').text(tweet.weightedLength / 2);
     if (tweet.valid) {
       $('#tweetWrap').removeClass("err");
+      $("#tweetSubmit").prop('disabled', false);
     } else {
       $('#tweetWrap').addClass("err");
+      $("#tweetSubmit").prop('disabled', true);
     }
   });
 });

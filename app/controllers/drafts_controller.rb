@@ -11,7 +11,7 @@ class DraftsController < ApplicationController
     @draft = Draft.new(draft_params)
     respond_to do |format|
       if @draft.save
-        format.js { redirect_to drafts_url, notice: 'ドラフトを追加しました' }
+        format.js { redirect_to drafts_url, notice: '追加しました' }
       else
         @object = @draft
         format.js { render 'shared/err_msg', status: :unprocessable_entity }
@@ -23,7 +23,7 @@ class DraftsController < ApplicationController
 
   def update
     if @draft.update(draft_params)
-      redirect_to drafts_url, notice: 'ドラフトを編集しました'
+      redirect_to drafts_url, notice: '編集しました'
     else
       render :edit
     end
